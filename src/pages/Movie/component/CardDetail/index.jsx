@@ -1,14 +1,15 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
-import { GetTVShowById } from "../../../../store/movies/apiActions";
+import { GetMovieById } from "../../../../store/movies/apiActions";
 const CardDetail = () => {
   const { id } = useParams();
   const dispatch = useDispatch();
-  const { data, loading, error } = useSelector((state) => state.getTVShowById);
+  const { data, loading, error } = useSelector((state) => state.getMovieById);
   useEffect(() => {
-    dispatch(GetTVShowById({ id }));
+    dispatch(GetMovieById({ id }));
   }, []);
+  console.log("MOVIE DATA",id);
   const convertMinsToHours = (minutes) => {
     if (isNaN(minutes) || minutes < 0) {
       return "Invalid input";
@@ -59,7 +60,7 @@ const CardDetail = () => {
           &nbsp;&nbsp;&nbsp;
           <span>
             {data?.runtime
-              ? convertMinsToHours(data.data?.runtime)
+              ? convertMinsToHours(data?.runtime)
               : data?.number_of_seasons}
           </span>
         </i>

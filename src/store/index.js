@@ -1,5 +1,6 @@
 import { configureStore } from "@reduxjs/toolkit";
 import {
+  getMovieByIdReducer,
   nowPLayingReducer,
   popularMoviesReducer,
   topRatedMoviesReducer,
@@ -24,6 +25,7 @@ const store = configureStore({
     popularShows: popularShowsReducer,
     topRatedShows: topRatedShowsReducer,
     getTVShowById: getTVShowByIdReducer,
+    getMovieById: getMovieByIdReducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({

@@ -105,6 +105,7 @@ export const GetMovieById = createAsyncThunk(
         },
       };
       const response = await axios(options);
+      console.log("GET MOVIE DETAIL", response);
       return response;
     } catch (error) {
       return thunkApi.rejectWithValue(error.response);

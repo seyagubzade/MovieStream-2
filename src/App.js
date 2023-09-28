@@ -11,6 +11,7 @@ import TvShows from "./pages/TVShow";
 // import CardDetails from "./pages/TVShow/component/CardDetail";
 import SearchResults from "./pages/SearchResults";
 import TvShowsDetail from "./pages/TVShow/component/CardDetail";
+import MoviesDetail from "./pages/Movie/component/CardDetail"
 function App() {
   return (
     <div className="App">
@@ -18,6 +19,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/movies" element={<Movies />} />
+        <Route path="/movies/:id" element={<MoviesDetail />} />
         <Route path="/tv-shows" element={<TvShows />} />
         <Route path="/tv-shows/:id" element={<TvShowsDetail />} />
         {/* <Route path="/card/:id" element={<CardDetails />} /> */}
